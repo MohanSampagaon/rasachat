@@ -1,0 +1,110 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- bot_challenge
+- salary
+- hra
+- pf
+- specialallowance
+- pfcontact
+- negative
+- positive
+entities:
+- sal
+- kwa
+- advance
+- hratax
+- hra
+- kwapf
+- pfq
+- pfcon
+- pfdiscon
+- pftrans
+- pfvpf
+- pfaccount
+- pfteam
+- pfuanmerge
+- pfnewjoiner
+- pfuan
+- pfdont
+- pfoneaccount
+- pfissue
+- sawhat
+- saissue
+slots:
+  advance:
+    type: text
+  hra:
+    type: text
+  hratax:
+    type: text
+  kwa:
+    type: text
+  kwapf:
+    type: text
+  pfaccount:
+    type: text
+  pfcon:
+    type: text
+  pfdiscon:
+    type: text
+  pfdont:
+    type: text
+  pfissue:
+    type: text
+  pfnewjoiner:
+    type: text
+  pfoneaccount:
+    type: text
+  pfq:
+    type: text
+  pfteam:
+    type: text
+  pftrans:
+    type: text
+  pfuan:
+    type: text
+  pfuanmerge:
+    type: text
+  pfvpf:
+    type: text
+  saissue:
+    type: text
+  sal:
+    type: text
+  sawhat:
+    type: text
+responses:
+  utter_greet:
+  - text: Hey! I am your policy query assistant, I can help you with below queries
+      <br> 1. Salary <br> 2. PF <br> 3. HRA <br> 4. Special Allowance
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_nohelp:
+  - text: Sorry about that,I have notified your query to the concern personnel, they
+      will get in touch with you. Thanks
+  utter_goodbye:
+  - buttons:
+    - payload: /positive
+      title: helped
+    - payload: /negative
+      title: not really
+    text: "Bye, see you soon! \n Did the converstation help? Please select"
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_please_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+  utter_default:
+  - text: Sorry I didn't get that. Can you rephrase?
+actions:
+- faq
